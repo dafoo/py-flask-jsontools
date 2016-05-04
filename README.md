@@ -158,13 +158,19 @@ class ApiJSONEncoder(DynamicJSONEncoder):
         return super(DynamicJSONEncoder, self).default(o)
 ```
 
+For Python 3, the last line should be
+
+```
+   return super().default(o)
+```
+
 Now, just install the encoder to your Flask:
 
 ```python
 from flask import Flask
 
 app = Flask(__name__)
-app.json_encoder = DynamicJSONEncoder
+app.json_encoder = ApiJSONEncoder
 ```
 
 
