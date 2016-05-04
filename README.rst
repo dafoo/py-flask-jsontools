@@ -167,6 +167,7 @@ and times:
 For Python 3, the last line should be
 
 .. code:: python
+
     return super().default(o)
 
 
