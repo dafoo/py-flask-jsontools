@@ -164,6 +164,12 @@ and times:
             # Fallback
             return super(DynamicJSONEncoder, self).default(o)
 
+For Python 3, the last line should be
+
+.. code:: python
+    return super().default(o)
+
+
 Now, just install the encoder to your Flask:
 
 .. code:: python
@@ -171,7 +177,7 @@ Now, just install the encoder to your Flask:
     from flask import Flask
 
     app = Flask(__name__)
-    app.json_encoder = DynamicJSONEncoder
+    app.json_encoder = ApiJSONEncoder
 
 JsonSerializableBase
 --------------------
